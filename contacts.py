@@ -33,3 +33,12 @@ def add_contact():
     contact = {'name': name, 'phone': phone}
     phonebook.append(contact)
     print("Đã thêm liên hệ.")
+
+def view_contacts():
+    if not phonebook:
+        print("Danh bạ đang trống.")
+        return
+    print("\n--- DANH BẠ ---")
+    for i, c in enumerate(phonebook, start=1):
+        print(f"{i}. {c['name']} - {c['phone']}")
+    print("---------------")
