@@ -22,3 +22,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+def add_contact():
+    name = input("Nhập tên: ").strip()
+    phone = input("Nhập số điện thoại: ").strip()
+    if not name or not phone:
+        print("Tên hoặc số điện thoại không được rỗng.")
+        return
+    # kiểm tra trùng (tuỳ yêu cầu, ở đây cho phép trùng)
+    contact = {'name': name, 'phone': phone}
+    phonebook.append(contact)
+    print("Đã thêm liên hệ.")
