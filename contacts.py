@@ -42,3 +42,17 @@ def view_contacts():
     for i, c in enumerate(phonebook, start=1):
         print(f"{i}. {c['name']} - {c['phone']}")
     print("---------------")
+
+def search_contact():
+    q = input("Nhập tên cần tìm: ").strip()
+    if not q:
+        print("Bạn chưa nhập tên.")
+        return
+    found = False
+    for c in phonebook:
+        # so sánh không phân biệt hoa thường
+        if c['name'].lower() == q.lower():
+            print(f"Tìm thấy: {c['name']} - {c['phone']}")
+            found = True
+    if not found:
+        print("Không tìm thấy.")
